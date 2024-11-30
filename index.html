@@ -1,0 +1,58 @@
+<!--done-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Specifies IE compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+    <title>WEATHER APP</title> <!-- Title of the webpage displayed in the browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS stylesheet -->
+    <style>
+        .hidden {
+            display: none; /* Class to hide elements */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-wrapper"> <!-- Wrapper for login and signup forms -->
+        <div id="login" class="form-container glass-effect"> <!-- Login form container -->
+            <h1>Login to WEATHER Wise</h1> <!-- Main heading for the login section -->
+            <form id="login-form"> <!-- Form for login functionality -->
+                <label for="username">Username:</label> <!-- Label for the username input -->
+                <input type="text" id="username" placeholder="Enter your username" required> <!-- Input field for username -->
+                <label for="password">Password:</label> <!-- Label for the password input -->
+                <input type="password" id="password" placeholder="Enter your password" required> <!-- Input field for password -->
+                <button type="submit">Login</button> <!-- Submit button for the login form -->
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0);" onclick="showSection('signup')">Sign up here</a></p> <!-- Link to switch to the signup section -->
+        </div>
+
+        <div id="signup" class="form-container glass-effect hidden"> <!-- Signup form container, initially hidden -->
+            <h1>Sign Up for WEATHER Wise</h1> <!-- Main heading for the signup section -->
+            <form id="signup-form" action="weather.html" method="GET"> <!-- Form for signup functionality -->
+                <label for="new-username">Username:</label> <!-- Label for new username input -->
+                <input type="text" id="new-username" placeholder="Choose a username" required> <!-- Input field for new username -->
+                <label for="new-password">Password:</label> <!-- Label for new password input -->
+                <input type="password" id="new-password" placeholder="Choose a password" required> <!-- Input field for new password -->
+                <label for="confirm-password">Confirm Password:</label> <!-- Label for confirm password input -->
+                <input type="password" id="confirm-password" placeholder="Re-enter your password" required> <!-- Input field for confirm password -->
+                <button type="submit">Sign Up</button> <!-- Submit button for the signup form -->
+            </form>
+            <p>Already have an account? <a href="javascript:void(0);" onclick="showSection('login')">Login here</a></p> <!-- Link to switch to the login section -->
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) { // Function to switch between login and signup sections
+            const sections = document.querySelectorAll('.form-container'); // Select all form containers
+            sections.forEach((sec) => {
+                sec.classList.add('hidden'); // Hide all sections
+            });
+
+            document.getElementById(section).classList.remove('hidden'); // Show the selected section
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    background-image: url('mount.jpg'); /* Background image for the entire body */
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    font-family: 'Arial', sans-serif; /* Font family for the text */
+    color: white; /* Text color */
+    margin: 0; /* Remove default margin */
+}
+
+.home-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Positioning context for child elements */
+}
+
+/* Glass Circle Styles */
+.glass-circle {
+    width: 300px; /* Diameter of the outer circle */
+    height: 300px; /* Height of the outer circle */
+    border-radius: 50%; /* Make it circular */
+    background: rgba(194, 16, 16, 0.1); /* Semi-transparent background color */
+    backdrop-filter: blur(15px); /* Blur effect for the background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: fleX; /* Use flexbox for centering inner content */
+    justify-content: center; /* Center inner content horizontally */
+    align-items: center; /* Center inner content vertically */
+    animation: rotate 10S infinite linear; /* Outer circle rotation animation */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.inner-circle {
+    width: 250px; /* Diameter of the inner circle */
+    height: 250px; /* Height of the inner circle */
+    border-radius: 50%; /* Make it circular */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: columN; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background color */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    text-align: center; /* Center text inside */
+    transform-style: preserve-3D; /* Preserve 3D effect for children */
+    animation: inner-rotate 10s infinite linear; /* Inner rotation animation */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+}
+
+/* Updated button styles for Get Started */
+button {
+    padding: 15px 30px; /* Button padding */
+    background: linear-gradient(90deg, rgb(40, 28, 81), rgba(76, 175, 80, 0.7)); /* Gradient background */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 18px; /* Font size for button text */
+    color: rgb(196, 150, 150); /* Button text color */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background 0.2s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Space above the button */
+    position: relative; /* Positioning context for shadow */
+    overflow: hidden; /* Prevent overflow of the shadow */
+}
+
+button::before {
+    content: ''; /* Create a pseudo-element for glitter effect */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); /* Glitter effect */
+    opacity: 0.3; /* Initial opacity */
+    border-radius: 25px; /* Match button corners */
+    animation: glitter 1.5s infinite alternate; /* Glitter animation */
+}
+
+@keyframes glitter {
+    0% {
+        opacity: 0.1; /* Start with low opacity */
+    }
+    50% {
+        opacity: 0.5; /* Midpoint with higher opacity */
+    }
+    100% {
+        opacity: 0.1; /* End with low opacity */
+    }
+}
+
+button:hover {
+    background: linear-gradient(90deg, rgba(76, 175, 80, 1), rgba(76, 175, 80, 0.9)); /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); /* Glowing effect on hover */
+}
+
+a {
+    text-decoration: none; /* Remove underline from link */
+    color: #4CAF50; /* Link color */
+    font-weight: bold; /* Bold text */
+    display: inline-block; /* Block-level for spacing */
+    margin-top: 10px; /* Space above the link */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #3c8f40; /* Change color on hover */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg); /* Start rotation */
+    }
+    100% {
+        transform: rotateY(360deg); /* Complete rotation */
+    }
+}
+
+@keyframes inner-rotate {
+    0%, 100% {
+        transform: rotateY(0deg); /* No rotation at start and end */
+    }
+    50% {
+        transform: rotateY(-180deg); /* Rotate halfway */
+    }
+}

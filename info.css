@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    background-image: url('thnk.jpg') ;
+    color: rgb(75, 29, 202);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.weather-header {
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+nav button {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, transform 0.3s;
+    margin: 5px;
+}
+
+nav button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Container Styles */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+/* Logo */
+.header-logo {
+    width: 350px;
+    height: auto;
+    margin: -40px auto;
+}
+
+/* Search Bar Styling */
+.search-container {
+    margin: 30px 0;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+
+/* Weather Categories Styling */
+.weather-categories {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin: 10px 0;
+}
+
+.weather-categories button {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.weather-categories button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Weather Detail Box */
+.weather-detail-box {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Individual Category Animations */
+@keyframes wind-animation {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+.wind-animation {
+    animation: wind-animation 1s forwards;
+}
+
+@keyframes humidity-animation {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.humidity-animation {
+    animation: humidity-animation 1s forwards;
+}
+
+@keyframes temperature-animation {
+    from {
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.temperature-animation {
+    animation: temperature-animation 1s forwards;
+}
+
+@keyframes uv-index-animation {
+    from {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.uv-index-animation {
+    animation: uv-index-animation 1s forwards;
+}
+
+@keyframes sunset-animation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sunset-animation {
+    animation: sunset-animation 1s forwards;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+}
+

@@ -1,0 +1,95 @@
+<!--to make changes-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Compatibility with IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive design settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Weather Updates - WEATHER Wise</title>
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" href="weatherstyle.css">
+</head>
+<body>
+    <!-- Header section containing the logo and title -->
+    <header class="weather-header">
+        <img src="image.png" alt="Logo" class="logo"> <!-- Logo image -->
+        <h1>Weather Updates</h1> <!-- Main title -->
+        <nav>
+            <!-- Navigation button to go to the home page -->
+            <button onclick="location.href='home.html'">Home</button>
+        </nav>
+    </header>
+
+    <!-- Container for displaying weather information -->
+    <div class="weather-container">
+        <!-- Individual weather card for New Delhi -->
+        <div class="weather-card">
+            <h2>New-Delhi</h2>
+            <p>Temperature: 25°C</p>
+            <p>Condition: Sunny</p>
+            <p>Humidity: 60%</p>
+            <p>Wind Speed: 10 km/h</p>
+        </div>
+
+        <!-- Individual weather card for Kolkata -->
+        <div class="weather-card">
+            <h2>KolKata</h2>
+            <p>Temperature: 22°C</p>
+            <p>Condition: Cloudy</p>
+            <p>Humidity: 50%</p>
+            <p>Wind Speed: 5 km/h</p>
+        </div>
+
+        <!-- Individual weather card for Tamil Nadu -->
+        <div class="weather-card">
+            <h2>Tamil-Nadu</h2>
+            <p>Temperature: 30°C</p>
+            <p>Condition: Rainy</p>
+            <p>Humidity: 70%</p>
+            <p>Wind Speed: 15 km/h</p>
+        </div>
+    </div>
+
+    <!-- Button container for the 'More Info' button -->
+    <div class="button-container">
+        <!-- Button to navigate to more detailed weather information -->
+        <button class="more-info-button" onclick="location.href='more-info.html'">More Info</button>
+    </div>
+
+    <!-- Message placeholder for displaying info about clicking events -->
+    <div id="info-message" class="info-message hidden">Click on "More Info" for details! 🌟</div>
+
+    <!-- Container for displaying weather events -->
+    <div class="weather-events-container">
+        <div class="weather-events">
+            <!-- Individual event boxes with onclick events to show info message -->
+            <div class="event-box" onclick="showInfoMessage('Tornado')">Tornado</div>
+            <div class="event-box" onclick="showInfoMessage('Storm')">Storm</div>
+            <div class="event-box" onclick="showInfoMessage('Flood')">Flood</div>
+            <div class="event-box" onclick="showInfoMessage('Heatwave')">Heatwave</div>
+            <div class="event-box" onclick="showInfoMessage('Hurricane')">Hurricane</div>
+            <div class="event-box" onclick="showInfoMessage('Blizzard')">Blizzard</div>
+        </div>
+    </div>
+
+    <!-- Footer section with copyright information -->
+    <footer class="footer">
+        <p>&copy; 2024 WEATHER Wise. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle showing the info message -->
+    <script>
+        function showInfoMessage(event) {
+            const messageDiv = document.getElementById('info-message');
+            // Update the message content when an event box is clicked
+            messageDiv.textContent = `Click on "More Info" for details 🌟`;
+            messageDiv.classList.remove('hidden'); // Show the message
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One:wght@300&display=swap'); /* Importing the Concert One font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap'); /* Importing the Orbitron font */
+
+html {
+    height: 100%; /* Ensures the HTML element takes the full height */
+}
+
+body {
+    font-family: 'Concert One', cursive; /* Change font for better aesthetics */
+    background-image: url('image copy.png'); /* Background image for the body */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    color: white; /* Default text color */
+}
+
+.form-wrapper {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 200px); /* Calculate height minus 200px for spacing */
+}
+
+.form-container {
+    max-width: 400px; /* Maximum width of the form container */
+    margin: 0 20px; /* Margin on the left and right */
+    padding: 20px; /* Inner padding for the container */
+    border-radius: 10px; /* Rounded corners for the container */
+    transition: transform 0.5s ease; /* Smooth transition effect on transform */
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur the background behind the box */
+    border-radius: 15px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for definition */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+label {
+    display: block; /* Make labels block elements */
+    margin: 10px 0 5px; /* Spacing around labels */
+}
+
+input {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Inner padding for inputs */
+    margin-bottom: 20px; /* Space below each input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+}
+
+button {
+    width: 100%; /* Full width for buttons */
+    padding: 10px; /* Inner padding for buttons */
+    background: linear-gradient(90deg, #4CAF50, #3c8f40); /* Gradient background for buttons */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Pill shape for buttons */
+    font-weight: bold; /* Bold text for buttons */
+    color: white; /* Text color for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background: linear-gradient(90deg, #3c8f40, #4CAF50); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    transition: transform 0.3s; /* Smooth scaling transition */
+}
+
+a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for link color */
+}
+
+a:hover {
+    color: #3c8f40; /* Darker shade on hover for links */
+}
+
+.footer {
+    text-align: center; /* Center the text in the footer */
+    padding: 10px; /* Inner padding for the footer */
+    background-color: #0077cc; /* Background color for the footer */
+    color: white; /* Text color for the footer */
+    position: relative; /* Relative positioning for the footer */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Full width for the footer */
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Weather Information - WEATHER Wise</title>
+    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="more-info.css">
+</head>
+<body>
+    <header class="weather-header">
+        <h1>More Weather Information</h1>
+        <nav>
+            <button onclick="showConfirmation('home')">Home</button>
+            <button onclick="showConfirmation('weather')">Back to Weather Updates</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="info-container">
+            <div class="header-box">
+                <img src="image.png" alt="Weather App Logo" class="header-logo">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for a city..." oninput="searchWeather()">
+            </div>
+
+            <!-- Weather Categories -->
+            <div class="weather-categories">
+                <button onclick="showWeatherInfo('wind')">Wind</button>
+                <button onclick="showWeatherInfo('humidity')">Humidity</button>
+                <button onclick="showWeatherInfo('temperature')">Temperature</button>
+                <button onclick="showWeatherInfo('uv-index')">UV Index</button>
+                <button onclick="showWeatherInfo('sunset')">Sunset</button>
+            </div>
+
+            <!-- Dynamic Weather Details Section -->
+            <div class="weather-detail-box" id="wind-detail">
+                <h3>Wind Details</h3>
+                <p>Wind Speed: 10 km/h</p>
+                <p>Direction: North</p>
+            </div>
+            <div class="weather-detail-box" id="humidity-detail">
+                <h3>Humidity Details</h3>
+                <p>Humidity: 60%</p>
+                <p>Feels Like: 24°C</p>
+            </div>
+            <div class="weather-detail-box" id="temperature-detail">
+                <h3>Temperature Details</h3>
+                <p>Temperature: 25°C</p>
+                <p>Condition: Sunny</p>
+            </div>
+            <div class="weather-detail-box" id="uv-index-detail">
+                <h3>UV Index</h3>
+                <p>UV Index: 5 (Moderate)</p>
+                <p>Recommendation: Wear sunscreen</p>
+            </div>
+            <div class="weather-detail-box" id="sunset-detail">
+                <h3>Sunset Details</h3>
+                <p>Sunset Time: 7:45 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 WEATHER Wise. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showWeatherInfo(type) {
+            // Hide all weather detail boxes first
+            document.querySelectorAll('.weather-detail-box').forEach(box => {
+                box.style.display = 'none';
+                box.classList.remove('wind-animation', 'humidity-animation', 'temperature-animation', 'uv-index-animation', 'sunset-animation');
+            });
+
+            // Show the relevant detail box and trigger animation
+            const detailBox = document.getElementById(`${type}-detail`);
+            detailBox.style.display = 'block';
+
+            // Trigger animation for each category
+            if (type === 'wind') {
+                detailBox.classList.add('wind-animation');
+            } else if (type === 'humidity') {
+                detailBox.classList.add('humidity-animation');
+            } else if (type === 'temperature') {
+                detailBox.classList.add('temperature-animation');
+            } else if (type === 'uv-index') {
+                detailBox.classList.add('uv-index-animation');
+            } else if (type === 'sunset') {
+                detailBox.classList.add('sunset-animation');
+            }
+
+            // Remove animation classes after animation completes to allow re-triggering
+            setTimeout(() => {
+                detailBox.classList.remove('wind-animation', 'humidity-animation', 'temperature-animation', 'uv-index-animation', 'sunset-animation');
+            }, 1000); // This matches the duration of the animation
+        }
+
+        function showConfirmation(page) {
+            const message = `Are you sure you want to go to ${page === 'home' ? 'Home' : 'Weather Updates'}?`;
+            if (confirm(message)) {
+                location.href = page === 'home' ? 'home.html' : 'weather.html';
+            }
+        }
+
+        function searchWeather() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const city = 'Example City'; // You can fetch real data or provide more dynamic search functionality
+            if (city.toLowerCase().includes(searchValue)) {
+                alert(`Found city: ${city}`);
+            }
+        }
+    </script>
+</body>
+</html>
